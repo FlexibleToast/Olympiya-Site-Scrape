@@ -1,6 +1,5 @@
 from bs4 import BeautifulSoup as soup
-from urllib.request import urlopen as uReq
-from urllib.request import urlretrieve as uRet
+from urllib.request import urlopen as uReq, urlretrieve as uRet
 import os
 
 # Get html from site
