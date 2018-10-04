@@ -2,6 +2,8 @@ from bs4 import BeautifulSoup as soup
 from urllib.request import urlopen as uReq, urlretrieve as uRet
 import os
 
+# Counter for total of new images
+count = 0
 # Get html from site
 url = "http://olympiya.com/gallary"
 uClient = uReq(url)
@@ -38,6 +40,7 @@ for gallery in galleries:
 		else:
 			print("Downloading: {}".format(filename))
 			uRet(download, filename)
+			count += 1
 	print("Finished downloading {} images from {} gallery".format(len(images),dest))
 # Finished
-print("Finished scraping site")
+print("Finished scraping site, downloaded {} new images".format(count))
